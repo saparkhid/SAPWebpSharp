@@ -20,7 +20,7 @@ namespace WebPSharp.UI
         public MainWindow()
         {
             InitializeComponent();
-            HideNotificationBox();
+        
             SetupForm();
             SetupFileDialogs();
             pictureBoxPreview.SizeMode = PictureBoxSizeMode.Zoom;
@@ -40,14 +40,12 @@ namespace WebPSharp.UI
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-          
+            foxLinkLabel1.Click += (s, e) =>
+            {
+                  Process.Start(new ProcessStartInfo("https://www.cafebit.ir") { UseShellExecute = true });
+            };
         }
-        private void HideNotificationBox()
-        {
-            notificationBox1.Hide();
-      
-            btnOpenOutputFolder.Visible = false;
-        }
+  
         protected override void OnPaint(PaintEventArgs e)
         {
           

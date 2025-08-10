@@ -38,13 +38,11 @@
             btnOutput = new ReaLTaiizor.Controls.DreamButton();
             btnConvert = new ReaLTaiizor.Controls.Button();
             label3 = new Label();
-            label4 = new Label();
-            notificationBox1 = new ReaLTaiizor.Controls.NotificationBox();
-            btnOpenOutputFolder = new ReaLTaiizor.Controls.AirButton();
             headerLabel1 = new ReaLTaiizor.Controls.HeaderLabel();
             spaceButton1 = new ReaLTaiizor.Controls.SpaceButton();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
+            foxLinkLabel1 = new ReaLTaiizor.Controls.FoxLinkLabel();
             thunderGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPreview).BeginInit();
             SuspendLayout();
@@ -145,7 +143,7 @@
             txtOutput.TabIndex = 15;
             txtOutput.TextAlignment = HorizontalAlignment.Left;
             txtOutput.UseSystemPasswordChar = false;
-            txtOutput.TextChanged += this.txtOutput_TextChanged;
+            txtOutput.TextChanged += txtOutput_TextChanged;
             // 
             // btnOutput
             // 
@@ -159,7 +157,7 @@
             btnOutput.Name = "btnOutput";
             btnOutput.Size = new Size(141, 40);
             btnOutput.TabIndex = 16;
-            btnOutput.Text = "Pick";
+            btnOutput.Text = "Set";
             btnOutput.UseVisualStyleBackColor = true;
             btnOutput.Click += btnOutput_Click;
             // 
@@ -195,64 +193,6 @@
             label3.TabIndex = 18;
             label3.Text = "Developed by Seyed Ahmad Parkhid";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(14, 338);
-            label4.Name = "label4";
-            label4.Size = new Size(158, 21);
-            label4.TabIndex = 19;
-            label4.Text = "https://www.cafebit.ir";
-            // 
-            // notificationBox1
-            // 
-            notificationBox1.BorderCurve = 8;
-            notificationBox1.CloseForeColor = Color.Black;
-            notificationBox1.ErrorBackColor = Color.Crimson;
-            notificationBox1.ErrorBorderColor = Color.Crimson;
-            notificationBox1.ErrorForeColor = Color.White;
-            notificationBox1.ErrorTitleText = "ERROR";
-            notificationBox1.Font = new Font("Tahoma", 9F);
-            notificationBox1.Image = null;
-            notificationBox1.Location = new Point(185, 135);
-            notificationBox1.MinimumSize = new Size(100, 40);
-            notificationBox1.Name = "notificationBox1";
-            notificationBox1.NoticeBackColor = Color.Gray;
-            notificationBox1.NoticeBorderColor = Color.Gray;
-            notificationBox1.NoticeForeColor = Color.White;
-            notificationBox1.NoticeTitleText = "NOTICE";
-            notificationBox1.NotificationType = ReaLTaiizor.Controls.NotificationBox.Type.Notice;
-            notificationBox1.RoundCorners = true;
-            notificationBox1.ShowCloseButton = true;
-            notificationBox1.Size = new Size(232, 123);
-            notificationBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            notificationBox1.SuccessBackColor = Color.SeaGreen;
-            notificationBox1.SuccessBorderColor = Color.SeaGreen;
-            notificationBox1.SuccessForeColor = Color.White;
-            notificationBox1.SuccessTitleText = "SUCCESS";
-            notificationBox1.TabIndex = 20;
-            notificationBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            notificationBox1.WarningBackColor = Color.FromArgb(255, 128, 0);
-            notificationBox1.WarningBorderColor = Color.FromArgb(255, 128, 0);
-            notificationBox1.WarningForeColor = Color.White;
-            notificationBox1.WarningTitleText = "WARNING";
-            // 
-            // btnOpenOutputFolder
-            // 
-            btnOpenOutputFolder.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            btnOpenOutputFolder.Font = new Font("Segoe UI", 9F);
-            btnOpenOutputFolder.Image = null;
-            btnOpenOutputFolder.Location = new Point(236, 201);
-            btnOpenOutputFolder.Name = "btnOpenOutputFolder";
-            btnOpenOutputFolder.NoRounding = false;
-            btnOpenOutputFolder.Size = new Size(139, 24);
-            btnOpenOutputFolder.TabIndex = 22;
-            btnOpenOutputFolder.Text = "Open Output Folder";
-            btnOpenOutputFolder.Transparent = false;
-            // 
             // headerLabel1
             // 
             headerLabel1.AutoSize = true;
@@ -284,17 +224,29 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // foxLinkLabel1
+            // 
+            foxLinkLabel1.BackColor = Color.Transparent;
+            foxLinkLabel1.DownColor = Color.FromArgb(255, 149, 0);
+            foxLinkLabel1.EnabledCalc = true;
+            foxLinkLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            foxLinkLabel1.ForeColor = Color.FromArgb(0, 149, 221);
+            foxLinkLabel1.Location = new Point(14, 336);
+            foxLinkLabel1.Name = "foxLinkLabel1";
+            foxLinkLabel1.OverColor = Color.FromArgb(23, 140, 229);
+            foxLinkLabel1.Size = new Size(261, 31);
+            foxLinkLabel1.TabIndex = 25;
+            foxLinkLabel1.Text = "https://www.cafebit.ir";
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(597, 378);
+            Controls.Add(foxLinkLabel1);
             Controls.Add(spaceButton1);
             Controls.Add(headerLabel1);
-            Controls.Add(btnOpenOutputFolder);
-            Controls.Add(notificationBox1);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(btnConvert);
             Controls.Add(btnOutput);
@@ -331,12 +283,10 @@
         private ReaLTaiizor.Controls.DreamButton btnOutput;
         private ReaLTaiizor.Controls.Button btnConvert;
         private Label label3;
-        private Label label4;
-        private ReaLTaiizor.Controls.NotificationBox notificationBox1;
-        private ReaLTaiizor.Controls.AirButton btnOpenOutputFolder;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel1;
         private ReaLTaiizor.Controls.SpaceButton spaceButton1;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
+        private ReaLTaiizor.Controls.FoxLinkLabel foxLinkLabel1;
     }
 }
