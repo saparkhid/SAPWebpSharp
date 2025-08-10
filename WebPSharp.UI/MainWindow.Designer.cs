@@ -43,6 +43,8 @@
             btnOpenOutputFolder = new ReaLTaiizor.Controls.AirButton();
             headerLabel1 = new ReaLTaiizor.Controls.HeaderLabel();
             spaceButton1 = new ReaLTaiizor.Controls.SpaceButton();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
             thunderGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPreview).BeginInit();
             SuspendLayout();
@@ -62,6 +64,7 @@
             txtInput.TabIndex = 9;
             txtInput.TextAlignment = HorizontalAlignment.Left;
             txtInput.UseSystemPasswordChar = false;
+            txtInput.TextChanged += txtInput_TextChanged;
             // 
             // label1
             // 
@@ -89,6 +92,7 @@
             btnInput.TabIndex = 12;
             btnInput.Text = "Pick";
             btnInput.UseVisualStyleBackColor = true;
+            btnInput.Click += btnInput_Click;
             // 
             // thunderGroupBox1
             // 
@@ -141,6 +145,7 @@
             txtOutput.TabIndex = 15;
             txtOutput.TextAlignment = HorizontalAlignment.Left;
             txtOutput.UseSystemPasswordChar = false;
+            txtOutput.TextChanged += this.txtOutput_TextChanged;
             // 
             // btnOutput
             // 
@@ -156,6 +161,7 @@
             btnOutput.TabIndex = 16;
             btnOutput.Text = "Pick";
             btnOutput.UseVisualStyleBackColor = true;
+            btnOutput.Click += btnOutput_Click;
             // 
             // btnConvert
             // 
@@ -175,6 +181,7 @@
             btnConvert.TabIndex = 17;
             btnConvert.Text = "Convert";
             btnConvert.TextAlignment = StringAlignment.Center;
+            btnConvert.Click += btnConvert_Click;
             // 
             // label3
             // 
@@ -271,7 +278,11 @@
             spaceButton1.Text = "X";
             spaceButton1.TextAlignment = HorizontalAlignment.Center;
             spaceButton1.Transparent = false;
-            spaceButton1.Click += this.spaceButton1_Click;
+            spaceButton1.Click += spaceButton1_Click;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // MainWindow
             // 
@@ -325,5 +336,7 @@
         private ReaLTaiizor.Controls.AirButton btnOpenOutputFolder;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel1;
         private ReaLTaiizor.Controls.SpaceButton spaceButton1;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }
